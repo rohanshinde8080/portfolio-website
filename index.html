@@ -33,6 +33,11 @@
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+       
+* {
+    caret-color: transparent;
+}
+
         
         .card-glow {
             box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
@@ -92,15 +97,12 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        .hover-lift:hover {
-            transform: translateY(-8px) scale(1.02);
-        }
-        
-        .magnetic-btn {
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
+        /* LINE ~90 */
+        .typewriter {
+         border-right: none;        /* cursor line remove */
+          caret-color: transparent; /* text cursor remove */
+       }
+
         
         .magnetic-btn::before {
             content: '';
@@ -200,10 +202,10 @@
         <div class="max-w-7xl mx-auto px-6 py-20 relative z-10">
             <div class="text-center text-white">
                 <h2 class="text-6xl md:text-8xl font-bold mb-6 slide-up text-shadow" style="animation-delay: 0.2s;">
-                    Hi,I'm <span class="gradient-text bg-white bg-clip-text text-transparent">Rohan Shinde</span>
+                    Hi,I'm <span class="gradient-text bg-white bg-clip-text text-transparent">Rohan</span>
                 </h2>
                 
-                <div class="text-2xl md:text-4xl mb-8 slide-up typewriter" style="animation-delay: 0.4s;">
+                     <div class="text-2xl md:text-4xl mb-8 slide-up typewriter select-none" style="animation-delay: 0.4s;">
                     <span id="typing-text">Java Full Stack Developer(Aspirant)</span>
                 </div>
                 
@@ -268,22 +270,22 @@
                         <div class="space-y-4">
                             <div>
                               <h4 class="font-semibold text-lg">Master of Computer Applications (MCA)</h4>
-                              <p class="text-gray-600">Sanjivani University • 2025 – Present</p>
+                              <p class="text-gray-600">Sanjivani University – Present • 2025</p>
                             </div>
 
                             <div>
                               <h4 class="font-semibold text-lg">Bachelor of Computer Applications (BCA)</h4>
-                              <p class="text-gray-600">Shree Saibaba Senior College, Shirdi • 2025 • CGPA: 8.38</p>
+                              <p class="text-gray-600">Shree Saibaba Senior College, Shirdi • CGPA: 8.38 • 2025</p>
                             </div>
 
                              <div>
                                <h4 class="font-semibold text-lg">HSC (12th Science)</h4>
-                              <p class="text-gray-600">Shri Saibaba Junior College, Shirdi • 2022 • 38%</p>
+                              <p class="text-gray-600">Shri Saibaba Junior College, Shirdi • 2022 • 38% • 2022</p>
                              </div>
 
                             <div>
                                 <h4 class="font-semibold text-lg">SSC (10th)</h4>
-                                <p class="text-gray-600">SNADMV, Rui • 2020 • 80.30%</p>
+                                <p class="text-gray-600">SNADMV, Rui • 2020 • 80.30% • 2020 </p>
                              </div>
                         </div>
 
@@ -346,9 +348,7 @@
                  <span class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-4 py-2 rounded-full text-sm font-medium">
                   MySQL
                  </span>
-                 <span class="bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-                   Team Project
-                 </span>
+        
                 </div>
 
                  <div class="flex justify-between items-center">
@@ -555,53 +555,86 @@
 
       <div class="grid md:grid-cols-4 gap-8 text-center">
 
-    <!-- LeetCode -->
-    <a href="https://share.google/L8OydyTwciAEGuiG6" target="_blank"
-       class="group bg-gray-50 p-6 rounded-2xl hover-lift
-              transition-all duration-300 ease-out
-              hover:scale-105 hover:shadow-xl hover:ring-2 hover:ring-purple-400 hover:ring-offset-2">
+  <!-- LeetCode -->
+<a href="https://share.google/L8OydyTwciAEGuiG6" target="_blank"
+   class="group bg-gray-50 p-6 rounded-2xl hover-lift
+          transition-all duration-300 ease-out
+          hover:scale-105 hover:shadow-xl
+          hover:ring-2 hover:ring-orange-500 hover:ring-offset-2
+          relative overflow-hidden">
 
-        <div class="transition-transform duration-300 group-hover:-translate-y-1">
-            <h4 class="text-xl font-semibold mb-2 text-gray-800">LeetCode</h4>
-            <p class="text-gray-600">DSA Practice</p>
-        </div>
-    </a>
+    <!-- shine effect -->
+    <span class="absolute inset-0 bg-gradient-to-r from-transparent via-orange-200/40 to-transparent 
+                 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
 
-    <!-- GitHub -->
-    <a href="https://github.com/rohanshinde8080" target="_blank"
-       class="group bg-gray-50 p-6 rounded-2xl hover-lift
-              transition-all duration-300 ease-out
-              hover:scale-105 hover:shadow-xl hover:ring-2 hover:ring-gray-700 hover:ring-offset-2">
+    <div class="relative transition-transform duration-300 group-hover:-translate-y-1">
+        <h4 class="text-xl font-semibold mb-2 text-gray-800 flex items-center justify-center gap-2">
+            LeetCode
+            <span class="group-hover:rotate-12 transition-transform duration-300">🔥</span>
+        </h4>
+        <p class="text-gray-600">DSA & Problem Solving</p>
+    </div>
+</a>
 
-        <div class="transition-transform duration-300 group-hover:-translate-y-1">
-            <h4 class="text-xl font-semibold mb-2 text-gray-800">GitHub</h4>
-            <p class="text-gray-600">Projects & Code</p>
-        </div>
-    </a>
+   <!-- GitHub -->
+<a href="https://github.com/rohanshinde8080" target="_blank"
+   class="group bg-gray-50 p-6 rounded-2xl hover-lift
+          transition-all duration-300 ease-out
+          hover:scale-105 hover:shadow-xl
+          hover:ring-2 hover:ring-gray-700 hover:ring-offset-2
+          relative overflow-hidden">
 
-    <!-- CodeChef -->
-    <a href="https://www.codechef.com/users/rohanshinde80" target="_blank"
-       class="group bg-gray-50 p-6 rounded-2xl hover-lift
-              transition-all duration-300 ease-out
-              hover:scale-105 hover:shadow-xl hover:ring-2 hover:ring-yellow-400 hover:ring-offset-2">
+    <!-- shine effect -->
+    <span class="absolute inset-0 bg-gradient-to-r from-transparent via-gray-300/40 to-transparent
+                 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
 
-        <div class="transition-transform duration-300 group-hover:-translate-y-1">
-            <h4 class="text-xl font-semibold mb-2 text-gray-800">CodeChef</h4>
-            <p class="text-gray-600">Competitive Coding</p>
-        </div>
-    </a>
+    <div class="relative transition-transform duration-300 group-hover:-translate-y-1">
+        <h4 class="text-xl font-semibold mb-2 text-gray-800 flex justify-center gap-2">
+            GitHub <span class="group-hover:rotate-12 transition-transform">🐙</span>
+        </h4>
+        <p class="text-gray-600">Projects & Code</p>
+    </div>
+</a>
 
-    <!-- HackerRank -->
-    <a href="https://www.hackerrank.com/profile/rohanshinde8008" target="_blank"
-       class="group bg-gray-50 p-6 rounded-2xl hover-lift
-              transition-all duration-300 ease-out
-              hover:scale-105 hover:shadow-xl hover:ring-2 hover:ring-green-500 hover:ring-offset-2">
 
-        <div class="transition-transform duration-300 group-hover:-translate-y-1">
-            <h4 class="text-xl font-semibold mb-2 text-gray-800">HackerRank</h4>
-            <p class="text-gray-600">Problem Solving</p>
-        </div>
-    </a>
+   <!-- CodeChef -->
+<a href="https://www.codechef.com/users/rohanshinde80" target="_blank"
+   class="group bg-gray-50 p-6 rounded-2xl hover-lift
+          transition-all duration-300 ease-out
+          hover:scale-105 hover:shadow-xl
+          hover:ring-2 hover:ring-yellow-400 hover:ring-offset-2
+          relative overflow-hidden">
+
+    <span class="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-300/40 to-transparent
+                 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+
+    <div class="relative transition-transform duration-300 group-hover:-translate-y-1">
+        <h4 class="text-xl font-semibold mb-2 text-gray-800 flex justify-center gap-2">
+            CodeChef <span class="group-hover:rotate-12 transition-transform">👨‍🍳</span>
+        </h4>
+        <p class="text-gray-600">Competitive Coding</p>
+    </div>
+</a>
+
+  <!-- HackerRank -->
+<a href="https://www.hackerrank.com/profile/rohanshinde8008" target="_blank"
+   class="group bg-gray-50 p-6 rounded-2xl hover-lift
+          transition-all duration-300 ease-out
+          hover:scale-105 hover:shadow-xl
+          hover:ring-2 hover:ring-green-500 hover:ring-offset-2
+          relative overflow-hidden">
+
+    <span class="absolute inset-0 bg-gradient-to-r from-transparent via-green-300/40 to-transparent
+                 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+
+    <div class="relative transition-transform duration-300 group-hover:-translate-y-1">
+        <h4 class="text-xl font-semibold mb-2 text-gray-800 flex justify-center gap-2">
+            HackerRank <span class="group-hover:rotate-12 transition-transform">🏆</span>
+        </h4>
+        <p class="text-gray-600">Problem Solving</p>
+    </div>
+</a>
+
 
 </div>
 
@@ -638,7 +671,7 @@
                             </div>
                             <div>
                                 <div class="font-bold text-xl">Email</div>
-                                <div class="text-gray-200">rohanshinde@gmail.com</div>
+                                <div class="text-gray-200">rohanshinde8008@gmail.com</div>
                             </div>
                         </a>
                         
@@ -689,7 +722,7 @@
                 <p class="text-gray-400 text-lg mb-8">Creating beautiful things, one line of code at a time!</p>
                 
                 <div class="flex justify-center space-x-6 mb-8">
-                    <a href="mailto:rohanshinde@gmail.com" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition duration-300 hover:scale-110">
+                    <a href="mailto:rohanshinde8008@gmail.com" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition duration-300 hover:scale-110">
                         <i class="fas fa-envelope"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/rohan-shinde-9ba59b361" target="_blank" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition duration-300 hover:scale-110">
