@@ -318,14 +318,6 @@ Currently focusing on:
 
 ---
 
-## ⭐ Portfolio
-
-If you would like to explore my projects, skills and achievements:
-
-### 👉 [**Visit My Portfolio Website 🚀**](https://rohanshinde8080.github.io/portfolio-website/)
-
----
-
 <p align="center">
 
 ### 💻 Built with passion by Rohan Shinde
