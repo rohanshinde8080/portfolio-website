@@ -13,7 +13,7 @@ real-world projects.
 
 ## 🌐 Live Portfolio
 
-### 🚀 [Rohan Shinde Portfolio](https://rohanshinde8080.github.io/portfolio-website/)
+### 🚀 [Live-Portfolio](https://rohanshinde8080.github.io/portfolio-website/)
 
 Click the link above to visit my live portfolio website.
 
