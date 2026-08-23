@@ -1,872 +1,3112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rohan Shinde  -  Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-        
-        * {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        
-        .gradient-main {
-            background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 25%, #C084FC 50%, #E879F9 75%, #FBBF24 100%);
-        }
-        
-        .gradient-purple {
-            background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #A855F7 100%);
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #8B5CF6, #A855F7, #C084FC);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .glass-morphism {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-       
-* {
-    caret-color: transparent;
-}
 
-        
-        .card-glow {
-            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .card-glow:hover {
-            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.4);
-            transform: translateY(-10px);
-        }
-        
-        .floating-orb {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-        
-        .slide-up {
-            animation: slideUp 0.8s ease-out forwards;
-            opacity: 0;
-            transform: translateY(50px);
-        }
-        
-        @keyframes slideUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .typewriter {
-            border-right: 3px solid #A855F7;
-            animation: blink 1s infinite;
-        }
-        
-        @keyframes blink {
-            0%, 50% { border-color: transparent; }
-            51%, 100% { border-color: #A855F7; }
-        }
-        
-        .skill-circle {
-            stroke-dasharray: 283;
-            stroke-dashoffset: 283;
-            animation: fillCircle 2s ease-in-out forwards;
-        }
-        
-        @keyframes fillCircle {
-            to {
-                stroke-dashoffset: 0;
-            }
-        }
-        
-        .hover-lift {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        /* LINE ~90 */
-        .typewriter {
-         border-right: none;        /* cursor line remove */
-          caret-color: transparent; /* text cursor remove */
-       }
+    <title>Rohan Shinde - Portfolio</title>
 
-        
-        .magnetic-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .magnetic-btn:hover::before {
-            left: 100%;
-        }
-        
-        .parallax-bg {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        .text-shadow {
-            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-        
-        .border-gradient {
-            background: linear-gradient(45deg, #8B5CF6, #A855F7, #C084FC);
-            padding: 2px;
-            border-radius: 16px;
-        }
-        
-        .border-gradient-inner {
-            background: white;
-            border-radius: 14px;
-        }
-        
-        .pulse-glow {
-            animation: pulseGlow 2s infinite;
-        }
-        
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.4); }
-            50% { box-shadow: 0 0 40px rgba(168, 85, 247, 0.8); }
-        }
-        
-        .rotate-on-hover {
-            transition: transform 0.5s ease;
-        }
-        
-        .rotate-on-hover:hover {
-            transform: rotate(5deg) scale(1.05);
-        }
-    </style>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 </head>
-<body class="bg-gray-50 overflow-x-hidden">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass-morphism">
-        <div class="max-w-7xl mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold gradient-text">
-                    ROHAN SHINDE
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-white hover:text-purple-200 transition duration-300 font-medium">Home</a>
-                    <a href="#about" class="text-white hover:text-purple-200 transition duration-300 font-medium">About</a>
-                    <a href="#work" class="text-white hover:text-purple-200 transition duration-300 font-medium">Work</a>
-                    <a href="#skills" class="text-white hover:text-purple-200 transition duration-300 font-medium">Skills</a>
-                    <a href="#contact" class="text-white hover:text-purple-200 transition duration-300 font-medium">Contact</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden text-white text-xl">
-                    <i class="fas fa-bars"></i>
-                </button>
+
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <nav class="modern-navbar">
+
+        <div class="nav-container">
+
+            <a href="#home" class="nav-logo">
+                <span>R</span>
+                ROHAN
+            </a>
+
+
+            <div class="nav-links">
+
+               <a href="#home" class="nav-link active">
+    Home
+</a>
+
+<a href="#about" class="nav-link">
+    About
+</a>
+
+<a href="#skills" class="nav-link">
+    Skills
+</a>
+
+<a href="#work" class="nav-link">
+    Projects
+</a>
+
+<a href="#education" class="nav-link">
+    Education
+</a>
+
+<a href="#achievements" class="nav-link">
+    Achievements
+</a>
+
+<a href="#contact" class="nav-link">
+    Contact
+</a>
+
             </div>
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-2">
-                <a href="#home" class="block py-2 text-white hover:text-purple-200">Home</a>
-                <a href="#about" class="block py-2 text-white hover:text-purple-200">About</a>
-                <a href="#work" class="block py-2 text-white hover:text-purple-200">Work</a>
-                <a href="#skills" class="block py-2 text-white hover:text-purple-200">Skills</a>
-                <a href="#contact" class="block py-2 text-white hover:text-purple-200">Contact</a>
-            </div>
+
+
+            <a href="#contact" class="nav-connect">
+
+                Let's Talk
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+
+            <button
+                id="mobile-menu-btn"
+                class="mobile-menu-btn"
+                type="button"
+                aria-label="Open menu"
+            >
+
+                <i class="fas fa-bars"></i>
+
+            </button>
+
         </div>
+
+
+        <!-- Mobile Menu -->
+
+        <div id="mobile-menu" class="mobile-nav">
+
+            <a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#work">Projects</a>
+<a href="#education">Education</a>
+<a href="#achievements">Achievements</a>
+<a href="#contact">Contact</a>
+
+        </div>
+
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen gradient-main flex items-center relative overflow-hidden">
-        <!-- Floating Orbs -->
-        <div class="absolute inset-0">
-            <div class="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full floating-orb blur-xl"></div>
-            <div class="absolute top-40 right-32 w-24 h-24 bg-white/15 rounded-full floating-orb blur-lg" style="animation-delay: 2s;"></div>
-            <div class="absolute bottom-32 left-40 w-40 h-40 bg-white/5 rounded-full floating-orb blur-2xl" style="animation-delay: 4s;"></div>
-            <div class="absolute bottom-20 right-20 w-28 h-28 bg-white/10 rounded-full floating-orb blur-xl" style="animation-delay: 1s;"></div>
+
+
+    <!-- =====================================================
+         HERO SECTION
+    ====================================================== -->
+
+    <section id="home" class="hero-3d">
+
+        <!-- Three.js Canvas -->
+
+        <canvas id="three-canvas"></canvas>
+
+
+        <!-- Background -->
+
+        <div class="hero-gradient"></div>
+
+        <div class="hero-grid"></div>
+
+        <div class="hero-glow hero-glow-1"></div>
+
+        <div class="hero-glow hero-glow-2"></div>
+
+
+
+        <!-- Hero Content -->
+
+        <div class="hero-content">
+
+
+            <!-- Status -->
+
+            <div class="hero-badge">
+
+                <span class="status-dot"></span>
+
+                Available for Opportunities
+
+            </div>
+
+
+
+            <!-- Intro -->
+
+            <p class="hero-intro">
+                Hello, I'm
+            </p>
+
+
+
+            <!-- Name -->
+
+            <h1 class="hero-title">
+
+                Rohan
+
+                <span>
+                    Shinde
+                </span>
+
+            </h1>
+
+
+
+            <!-- Typing Role -->
+
+            <div class="hero-role">
+
+                <span id="typing-text">
+                    Python Developer
+                </span>
+
+                <span class="typing-cursor"></span>
+
+            </div>
+
+
+
+            <!-- Description -->
+
+            <p class="hero-description">
+
+                MCA student focused on Python, RAG,
+                LangChain, backend development,
+                databases and modern full-stack development.
+                I enjoy building practical solutions
+                for real-world problems.
+
+            </p>
+
+
+
+            <!-- Buttons -->
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#about"
+                    class="hero-btn primary-btn"
+                >
+
+                    About Me
+
+                    <i class="fas fa-arrow-down"></i>
+
+                </a>
+
+
+                <a
+                    href="#contact"
+                    class="hero-btn secondary-btn"
+                >
+
+                    Contact Me
+
+                    <i class="fas fa-paper-plane"></i>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Social Links -->
+
+            <div class="hero-socials">
+
+
+                <a
+                    href="https://github.com/rohanshinde8080"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                >
+
+                    <i class="fab fa-github"></i>
+
+                </a>
+
+
+                <a
+                    href="https://www.linkedin.com/in/rohan-shinde-9ba59b361"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                >
+
+                    <i class="fab fa-linkedin-in"></i>
+
+                </a>
+
+
+                <a
+                    href="mailto:rohanshinde8008@gmail.com"
+                    aria-label="Email"
+                >
+
+                    <i class="fas fa-envelope"></i>
+
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/rohanshinde_80"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                >
+
+                    <i class="fab fa-instagram"></i>
+
+                </a>
+
+            </div>
+
         </div>
-        
-        <div class="max-w-7xl mx-auto px-6 py-20 relative z-10">
-            <div class="text-center text-white">
-                <h2 class="text-6xl md:text-8xl font-bold mb-6 slide-up text-shadow" style="animation-delay: 0.2s;">
-                    Hi,I'm <span class="gradient-text bg-white bg-clip-text text-transparent">Rohan</span>
+
+
+
+        <!-- Floating Focus Card -->
+
+        <div class="hero-floating-card">
+
+            <div class="floating-card-icon">
+
+                <i class="fab fa-python"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Currently Focused On
+                </span>
+
+                <strong>
+                    Python • RAG • AI
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Scroll -->
+
+        <div class="hero-scroll">
+
+            <span>
+                Scroll to explore
+            </span>
+
+            <i class="fas fa-chevron-down"></i>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ABOUT SECTION
+    ====================================================== -->
+
+    <section id="about" class="about-section">
+
+
+        <div class="about-container">
+
+
+            <!-- =================================================
+                 LEFT SIDE - ABOUT CONTENT
+            ================================================== -->
+
+            <div class="about-content">
+
+
+                <span class="about-eyebrow">
+                    ABOUT ME
+                </span>
+
+
+                <h2 class="about-title">
+
+                    Building
+
+                    <span>
+                        practical
+                    </span>
+
+                    digital solutions.
+
                 </h2>
-                
-                     <div class="text-2xl md:text-4xl mb-8 slide-up typewriter select-none" style="animation-delay: 0.4s;">
-                    <span id="typing-text">Java Full Stack Developer(Aspirant)</span>
-                </div>
-                
-                <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-gray-100 slide-up leading-relaxed" style="animation-delay: 0.6s;">
-                    MCA student passionate about Java, DSA, and developing efficient,scalable web applications.
+
+
+                <div class="about-line"></div>
+
+
+
+                <p class="about-description">
+
+                    Hello, I'm
+                    <strong>Rohan Shinde</strong>,
+                    an MCA student passionate about
+                    software development, problem solving,
+                    and building practical applications.
+
                 </p>
-                
-                <div class="flex flex-col sm:flex-row gap-6 justify-center slide-up" style="animation-delay: 0.8s;">
-                    <a href="#work" class="magnetic-btn bg-white text-purple-600 px-10 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition duration-300 pulse-glow">
-                        View My Work
-                    </a>
-                    <a href="#contact" class="magnetic-btn border-2 border-white text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-purple-600 transition duration-300">
-                        Contact Me
-                    </a>
-                </div>
-                
-                <div class="mt-16 slide-up" style="animation-delay: 1s;">
-                    <div class="flex justify-center space-x-8">
-                        <a href="mailto:rohanshinde8008@gmail.com" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover:scale-110 transition duration-300">
-                            <i class="fas fa-envelope text-xl"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/rohan-shinde-9ba59b361" target="_blank" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover:scale-110 transition duration-300">
-                            <i class="fab fa-linkedin text-xl"></i>
-                        </a>
-                        <a href="https://www.instagram.com/rohanshinde_80?igsh=MXhmcXdieXJpOXBnOQ==" target="_blank" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover:scale-110 transition duration-300">
-                            <i class="fab fa-instagram text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-            <i class="fas fa-chevron-down text-2xl"></i>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <div class="border-gradient">
-                        <div class="border-gradient-inner p-8">
-                            <div class="text-6xl mb-6 text-center">👨‍💻</div>
-                            <h2 class="text-4xl font-bold gradient-text mb-6 text-center">About Me</h2>
-                            <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                               Hello! I'm Rohan Shinde, currently an MCA student with a strong passion for coding, software development, and exploring new technologies. I am actively strengthening my skills in Data Structures and Algorithms (DSA) to improve my problem-solving abilities and write efficient, optimized code.
 
-                            </p>
-                            <p class="text-gray-600 text-lg leading-relaxed">
-                                 I am focusing on Java development and building a solid foundation in backend and full stack technologies to develop reliable, scalable, and high-performance applications.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="space-y-8">
-                    <div class="bg-gradient-to-r from-purple-50 to-blue-50 p-8 rounded-2xl hover-lift">
-                        <h3 class="text-2xl font-bold gradient-text mb-4">🎓 Education</h3>
-                        <div class="space-y-4">
-                            <div>
-                              <h4 class="font-semibold text-lg">Master of Computer Applications (MCA)</h4>
-                              <p class="text-gray-600">Sanjivani University – Present • 2025</p>
-                            </div>
 
-                            <div>
-                              <h4 class="font-semibold text-lg">Bachelor of Computer Applications (BCA)</h4>
-                              <p class="text-gray-600">Shree Saibaba Senior College, Shirdi • CGPA: 8.38 • 2025</p>
-                            </div>
+                <p class="about-description">
 
-                             <div>
-                               <h4 class="font-semibold text-lg">HSC (12th Science)</h4>
-                              <p class="text-gray-600">Shri Saibaba Junior College, Shirdi • 2022 • 38% • 2022</p>
-                             </div>
+                    Currently, I am focusing on
+                    <strong>Python, RAG and LangChain</strong>.
+                    I am exploring AI-powered applications,
+                    backend development and modern
+                    full-stack development.
 
-                            <div>
-                                <h4 class="font-semibold text-lg">SSC (10th)</h4>
-                                <p class="text-gray-600">SNADMV, Rui • 2020 • 80.30% • 2020 </p>
-                             </div>
+                </p>
+
+
+
+                <p class="about-description">
+
+                    My goal is to understand real-world
+                    problems and build useful,
+                    reliable and scalable solutions
+                    using modern technologies.
+
+                </p>
+
+
+
+                <!-- Focus Cards -->
+
+                <div class="about-focus">
+
+
+                    <!-- Python -->
+
+                    <div class="focus-item">
+
+                        <div class="focus-icon python-focus">
+
+                            <i class="fab fa-python"></i>
+
                         </div>
 
-                    </div>
-                    
-                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl hover-lift">
-                        <h3 class="text-2xl font-bold gradient-text mb-4">💼 Experience</h3>
+
                         <div>
-                           <p class="text-gray-700">
-                             Fresher with strong academic background and hands-on experience through Java and web-based projects.
-                              Actively improving problem-solving skills using Data Structures and Algorithms.
-                           </p>
+
+                            <span>
+                                Currently Learning
+                            </span>
+
+                            <strong>
+                                Python & Full Stack
+                            </strong>
 
                         </div>
+
+                    </div>
+
+
+
+                    <!-- RAG -->
+
+                    <div class="focus-item">
+
+                        <div class="focus-icon ai-focus">
+
+                            <i class="fas fa-brain"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                AI Focus
+                            </span>
+
+                            <strong>
+                                RAG & LangChain
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Backend -->
+
+                    <div class="focus-item">
+
+                        <div class="focus-icon backend-focus">
+
+                            <i class="fas fa-server"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Development
+                            </span>
+
+                            <strong>
+                                Backend & APIs
+                            </strong>
+
+                        </div>
+
                     </div>
 
                 </div>
+
+
+
+                <!-- About Button -->
+
+                <div class="about-actions">
+
+                    <a
+                        href="#skills"
+                        class="about-btn"
+                    >
+
+                        Explore My Skills
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
             </div>
+
+
+
+            <!-- =================================================
+                 RIGHT SIDE - PHOTO
+            ================================================== -->
+
+            <div class="about-visual">
+
+
+                <!-- Background Glow -->
+
+                <div class="about-photo-glow"></div>
+
+
+
+                <!-- 3D Photo Card -->
+
+                <div class="about-photo-card">
+
+
+                    <!-- Rotating Ring -->
+
+                    <div class="photo-ring ring-one"></div>
+
+                    <div class="photo-ring ring-two"></div>
+
+
+
+                    <!-- Image -->
+
+                    <div class="photo-border">
+
+                        <img
+                            src="images/rohan-profile.png"
+                            alt="Rohan Shinde"
+                            class="about-photo"
+                        >
+
+                    </div>
+
+
+
+                    <!-- Image Shine -->
+
+                    <div class="photo-shine"></div>
+
+
+
+                    <!-- Top Floating Card -->
+
+                    <div class="photo-badge photo-badge-top">
+
+                        <span class="badge-dot"></span>
+
+
+                        <div>
+
+                            <small>
+                                STATUS
+                            </small>
+
+                            <strong>
+                                Learning & Building
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Bottom Floating Card -->
+
+                    <div class="photo-badge photo-badge-bottom">
+
+
+                        <div class="mini-tech-icon">
+
+                            <i class="fas fa-brain"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <small>
+                                CURRENT FOCUS
+                            </small>
+
+                            <strong>
+                                Python • RAG • AI
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Floating Technology Icons -->
+
+
+                <div class="floating-tech tech-python">
+
+                    <i class="fab fa-python"></i>
+
+                </div>
+
+
+                <div class="floating-tech tech-code">
+
+                    <i class="fas fa-code"></i>
+
+                </div>
+
+
+                <div class="floating-tech tech-ai">
+
+                    <i class="fas fa-brain"></i>
+
+                </div>
+
+
+            </div>
+
         </div>
+
     </section>
 
-    <!-- Work Section -->
-    <section id="work" class="py-24 bg-gradient-to-br from-gray-50 to-purple-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold gradient-text mb-6">Projects</h2>
-                <div class="w-24 h-1 gradient-purple mx-auto rounded-full mb-6"></div>
+    <!-- =====================================================
+     SKILLS SECTION
+===================================================== -->
 
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-12">
-               <div class="group">
-                 <div class="bg-white rounded-3xl p-8 card-glow rotate-on-hover">
-                     <div class="text-center mb-8">
-                     <div class="w-20 h-20 gradient-purple rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-4">
-                🐄
-                 </div>
-                     <h3 class="text-3xl font-bold text-gray-800 mb-4">
-                       Cow Management System
-                    </h3>
-                 </div>
+<section id="skills" class="skills-section">
 
-                <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                   A Java-based desktop application designed to help farmers digitally manage
-                  cattle details, breeding status, health records, and medical expenses
-                       in an efficient and reliable manner.
+    <!-- Background Glow -->
+    <div class="skills-bg-glow skills-glow-1"></div>
+    <div class="skills-bg-glow skills-glow-2"></div>
+
+    <div class="skills-container">
+
+        <!-- Section Heading -->
+        <div class="skills-heading reveal-skill">
+
+            <span class="skills-eyebrow">
+                MY SKILLS
+            </span>
+
+            <h2>
+                Technologies I
+                <span>Work With.</span>
+            </h2>
+
+            <p>
+                My technical skills include programming, AI,
+                backend development, databases and web technologies.
+                I am also continuously learning modern AI and
+                DevOps tools.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             CORE SKILLS
+        ================================================= -->
+
+        <div class="skills-subheading reveal-skill">
+            <span>01</span>
+            <h3>Core Skills</h3>
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <!-- Python -->
+            <div class="skill-card skill-python reveal-skill tilt-skill">
+
+                <div class="skill-card-top">
+
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+
+                    <span class="skill-number">01</span>
+
+                </div>
+
+                <h3>Python</h3>
+
+                <p>
+                    Building practical applications, backend
+                    solutions and AI-based projects using Python.
                 </p>
 
-                 <ul class="text-gray-600 list-disc list-inside mb-8 space-y-1">
-                  <li>Digitizes cattle record management to reduce manual errors</li>
-                   <li>Maintains breeding and health history for quick access</li>
-                   <li>Tracks and calculates medical expenses</li>
-                   <li>Simple, secure, and farmer-friendly system</li>
-                 </ul>
-
-                 <div class="flex flex-wrap gap-3 mb-8">
-                 <span class="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-                    Java
-                 </span>
-                 <span class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-                  MySQL
-                 </span>
-        
+                <div class="skill-tags">
+                    <span>Python</span>
+                    <span>OOP</span>
+                    <span>Backend</span>
                 </div>
 
-                 <div class="flex justify-between items-center">
-                 <span class="text-gray-400">
-                <i class="fas fa-calendar mr-2"></i>2025
-               </span>
+                <div class="skill-progress">
+                    <span style="width: 88%;"></span>
+                </div>
+
             </div>
-       </div>
-   </div>
 
-                
-            <div class="group">
-    <div class="bg-white rounded-3xl p-8 card-glow rotate-on-hover">
-        <div class="text-center mb-8">
-            <div class="w-20 h-20 gradient-purple rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-4">
-                💍
-            </div>
-            <h3 class="text-3xl font-bold text-gray-800 mb-4">
-                Jewellery E-Commerce Website
-            </h3>
-        </div>
 
-        <p class="text-gray-600 text-lg leading-relaxed mb-6">
-            A responsive e-commerce website developed for a jewellery shop, enabling users
-            to explore collections such as Rings, Necklaces, and Earrings through a clean
-            and interactive user interface.
-        </p>
+            <!-- Java -->
+            <div class="skill-card skill-java reveal-skill tilt-skill">
 
-        <ul class="text-gray-600 list-disc list-inside mb-8 space-y-1">
-            <li>Well-structured product categories and collections</li>
-            <li>Responsive and user-friendly navigation</li>
-            <li>Interactive product display for enhanced user experience</li>
-        </ul>
+                <div class="skill-card-top">
 
-        <div class="flex flex-wrap gap-3 mb-8">
-            <span class="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-                HTML5
-            </span>
-            <span class="bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-                CSS3
-            </span>
-            <span class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-                JavaScript
-            </span>
-        </div>
-
-        <div class="flex justify-between items-center">
-            <span class="text-gray-400">
-                <i class="fas fa-calendar mr-2"></i>2025
-            </span>
-        </div>
-    </div>
-</div>
-<div class="group">
-    <div class="bg-white rounded-3xl p-8 card-glow rotate-on-hover">
-        <div class="text-center mb-8">
-            <div class="w-20 h-20 gradient-purple rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-4">
-                🌐
-            </div>
-            <h3 class="text-3xl font-bold text-gray-800 mb-4">
-                Personal Portfolio Website
-            </h3>
-        </div>
-
-        <p class="text-gray-600 text-lg leading-relaxed mb-6">
-            A responsive personal portfolio website developed to showcase my skills,
-            projects, education, and coding profiles using a modern and clean user interface.
-        </p>
-
-        <ul class="text-gray-600 list-disc list-inside mb-8 space-y-1">
-            <li>Structured sections for About, Skills, Projects, and Contact</li>
-            <li>Responsive layout for desktop and mobile devices</li>
-            <li>Modern UI with smooth navigation and animations</li>
-        </ul>
-
-        <div class="flex flex-wrap gap-3 mb-8">
-            <span class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-                HTML5
-            </span>
-            <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-                CSS3
-            </span>
-            <span class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-                JavaScript
-            </span>
-        </div>
-
-        <div class="flex justify-between items-center">
-            <span class="text-gray-400">
-                <i class="fas fa-calendar mr-2"></i>2025
-            </span>
-        </div>
-    </div>
-</div>
-
-    </section>
-<!-- Skills Section -->
-<section id="skills" class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-
-        <!-- Heading -->
-        <div class="text-center mb-16">
-            <h2 class="text-5xl font-bold gradient-text mb-6">Skills & Expertise</h2>
-            <div class="w-24 h-1 gradient-purple mx-auto rounded-full mb-6"></div>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                Technologies, tools, and platforms I use to build efficient applications
-            </p>
-        </div>
-
-        <!-- Skills Circles -->
-        <div class="grid lg:grid-cols-3 gap-12 mb-20">
-
-            <!-- Programming Skills -->
-            <div class="text-center">
-                <div class="w-32 h-32 mx-auto mb-8 relative">
-                    <svg class="w-32 h-32 transform -rotate-90">
-                        <circle cx="64" cy="64" r="45" stroke="#e5e7eb" stroke-width="8" fill="none"/>
-                        <circle cx="64" cy="64" r="45" stroke="url(#gradient1)" stroke-width="8" fill="none"
-                                stroke-linecap="round" class="skill-circle" style="stroke-dashoffset: 56.5;"/>
-                        <defs>
-                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" style="stop-color:#8B5CF6"/>
-                                <stop offset="100%" style="stop-color:#A855F7"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <span class="text-2xl font-bold gradient-text">70%</span>
+                    <div class="skill-icon">
+                        <i class="fab fa-java"></i>
                     </div>
+
+                    <span class="skill-number">02</span>
+
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800 mb-4">Programming</h3>
-                <div class="space-y-3">
-                    <div class="bg-gray-50 px-4 py-2 rounded-full">Java</div>
-                     <div class="bg-gray-50 px-4 py-2 rounded-full">C++</div>
-                      <div class="bg-gray-50 px-4 py-2 rounded-full">Go</div>
-                    <div class="bg-gray-50 px-4 py-2 rounded-full">Data Structures & Algorithms</div>
-                    <div class="bg-gray-50 px-4 py-2 rounded-full">OOP Concepts</div>
+
+                <h3>Java</h3>
+
+                <p>
+                    Strong foundation in object-oriented programming,
+                    application logic and Java development.
+                </p>
+
+                <div class="skill-tags">
+                    <span>Java</span>
+                    <span>OOP</span>
+                    <span>JDBC</span>
                 </div>
+
+                <div class="skill-progress">
+                    <span style="width: 82%;"></span>
+                </div>
+
             </div>
 
-            <!-- Web Development -->
-            <div class="text-center">
-                <div class="w-32 h-32 mx-auto mb-8 relative">
-                    <svg class="w-32 h-32 transform -rotate-90">
-                        <circle cx="64" cy="64" r="45" stroke="#e5e7eb" stroke-width="8" fill="none"/>
-                        <circle cx="64" cy="64" r="45" stroke="url(#gradient2)" stroke-width="8" fill="none"
-                                stroke-linecap="round" class="skill-circle" style="stroke-dashoffset: 70.75;"/>
-                        <defs>
-                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" style="stop-color:#6366F1"/>
-                                <stop offset="100%" style="stop-color:#8B5CF6"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <span class="text-2xl font-bold gradient-text">65%</span>
+
+            <!-- RAG -->
+            <div class="skill-card skill-rag reveal-skill tilt-skill">
+
+                <div class="skill-card-top">
+
+                    <div class="skill-icon">
+                        <i class="fas fa-brain"></i>
                     </div>
+
+                    <span class="skill-number">03</span>
+
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800 mb-4">Web Development</h3>
-                <div class="space-y-3">
-                    <div class="bg-gray-50 px-4 py-2 rounded-full">HTML5</div>
-                    <div class="bg-gray-50 px-4 py-2 rounded-full">CSS3</div>
-                    <div class="bg-gray-50 px-4 py-2 rounded-full">JavaScript</div>
-                    <div class="bg-gray-50 px-4 py-2 rounded-full">angular</div>
+
+                <h3>RAG & AI</h3>
+
+                <p>
+                    Working with Retrieval-Augmented Generation
+                    concepts for building knowledge-based AI applications.
+                </p>
+
+                <div class="skill-tags">
+                    <span>RAG</span>
+                    <span>Embeddings</span>
+                    <span>AI</span>
                 </div>
+
+                <div class="skill-progress">
+                    <span style="width: 78%;"></span>
+                </div>
+
             </div>
 
-            <!-- Tools -->
-            <div class="text-center">
-                <div class="w-32 h-32 mx-auto mb-8 relative">
-                    <svg class="w-32 h-32 transform -rotate-90">
-                        <circle cx="64" cy="64" r="45" stroke="#e5e7eb" stroke-width="8" fill="none"/>
-                        <circle cx="64" cy="64" r="45" stroke="url(#gradient3)" stroke-width="8" fill="none"
-                                stroke-linecap="round" class="skill-circle" style="stroke-dashoffset: 42.45;"/>
-                        <defs>
-                            <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" style="stop-color:#A855F7"/>
-                                <stop offset="100%" style="stop-color:#C084FC"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <span class="text-2xl font-bold gradient-text">80%</span>
+
+            <!-- FastAPI -->
+            <div class="skill-card skill-fastapi reveal-skill tilt-skill">
+
+                <div class="skill-card-top">
+
+                    <div class="skill-icon">
+                        <i class="fas fa-bolt"></i>
                     </div>
+
+                    <span class="skill-number">04</span>
+
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800 mb-4">Tools</h3>
-                <div class="space-y-3">
-                    <div class="bg-gray-50 px-4 py-2 rounded-full">Git & GitHub</div>
-                    <div class="bg-gray-50 px-4 py-2 rounded-full">VS Code</div>
-                    <div class="bg-gray-50 px-4 py-2 rounded-full">Eclipse / IntelliJ</div>
-                    <div class="bg-gray-50 px-4 py-2 rounded-full">NetBeans</div>
+
+                <h3>FastAPI</h3>
+
+                <p>
+                    Creating REST APIs and backend services using
+                    Python and FastAPI.
+                </p>
+
+                <div class="skill-tags">
+                    <span>FastAPI</span>
+                    <span>REST API</span>
+                    <span>Uvicorn</span>
                 </div>
+
+                <div class="skill-progress">
+                    <span style="width: 80%;"></span>
+                </div>
+
             </div>
 
+
+            <!-- Databases -->
+            <div class="skill-card skill-database reveal-skill tilt-skill">
+
+                <div class="skill-card-top">
+
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+
+                    <span class="skill-number">05</span>
+
+                </div>
+
+                <h3>Databases</h3>
+
+                <p>
+                    Working with relational and NoSQL databases
+                    for storing and managing application data.
+                </p>
+
+                <div class="skill-tags">
+                    <span>MySQL</span>
+                    <span>PostgreSQL</span>
+                    <span>MongoDB</span>
+                </div>
+
+                <div class="skill-progress">
+                    <span style="width: 82%;"></span>
+                </div>
+
+            </div>
+
+
+            <!-- Web Technologies -->
+            <div class="skill-card skill-web reveal-skill tilt-skill">
+
+                <div class="skill-card-top">
+
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+
+                    <span class="skill-number">06</span>
+
+                </div>
+
+                <h3>Web Technologies</h3>
+
+                <p>
+                    Building responsive web interfaces using
+                    modern frontend technologies.
+                </p>
+
+                <div class="skill-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+
+                <div class="skill-progress">
+                    <span style="width: 80%;"></span>
+                </div>
+
+            </div>
+
+
+            <!-- Git -->
+            <div class="skill-card skill-git reveal-skill tilt-skill">
+
+                <div class="skill-card-top">
+
+                    <div class="skill-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+
+                    <span class="skill-number">07</span>
+
+                </div>
+
+                <h3>Git & GitHub</h3>
+
+                <p>
+                    Managing source code, tracking changes and
+                    maintaining projects using Git and GitHub.
+                </p>
+
+                <div class="skill-tags">
+                    <span>Git</span>
+                    <span>GitHub</span>
+                    <span>Version Control</span>
+                </div>
+
+                <div class="skill-progress">
+                    <span style="width: 85%;"></span>
+                </div>
+
+            </div>
+
+                            <!-- AWS -->
+<div class="skill-card tilt-skill reveal-skill skill-aws">
+
+    <div class="skill-card-top">
+
+        <div class="skill-icon">
+            <i class="fab fa-aws"></i>
         </div>
 
-        <!-- Coding Platforms -->
-        <div class="text-center mb-12">
-            <h3 class="text-4xl font-bold gradient-text mb-4">Coding Platforms</h3>
-            <p class="text-lg text-gray-600">
-                Actively practicing problem-solving and competitive programming
-            </p>
-        </div>
+        <span class="skill-number">
+            09
+        </span>
 
-      <div class="grid md:grid-cols-4 gap-8 text-center">
-
-  <!-- LeetCode -->
-<a href="https://share.google/L8OydyTwciAEGuiG6" target="_blank"
-   class="group bg-gray-50 p-6 rounded-2xl hover-lift
-          transition-all duration-300 ease-out
-          hover:scale-105 hover:shadow-xl
-          hover:ring-2 hover:ring-orange-500 hover:ring-offset-2
-          relative overflow-hidden">
-
-    <!-- shine effect -->
-    <span class="absolute inset-0 bg-gradient-to-r from-transparent via-orange-200/40 to-transparent 
-                 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
-
-    <div class="relative transition-transform duration-300 group-hover:-translate-y-1">
-        <h4 class="text-xl font-semibold mb-2 text-gray-800 flex items-center justify-center gap-2">
-            LeetCode
-            <span class="group-hover:rotate-12 transition-transform duration-300">🔥</span>
-        </h4>
-        <p class="text-gray-600">DSA & Problem Solving</p>
     </div>
-</a>
 
-   <!-- GitHub -->
-<a href="https://github.com/rohanshinde8080" target="_blank"
-   class="group bg-gray-50 p-6 rounded-2xl hover-lift
-          transition-all duration-300 ease-out
-          hover:scale-105 hover:shadow-xl
-          hover:ring-2 hover:ring-gray-700 hover:ring-offset-2
-          relative overflow-hidden">
+    <h3>AWS</h3>
 
-    <!-- shine effect -->
-    <span class="absolute inset-0 bg-gradient-to-r from-transparent via-gray-300/40 to-transparent
-                 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+    <p>
+        Learning AWS cloud services and
+        cloud computing fundamentals.
+    </p>
 
-    <div class="relative transition-transform duration-300 group-hover:-translate-y-1">
-        <h4 class="text-xl font-semibold mb-2 text-gray-800 flex justify-center gap-2">
-            GitHub <span class="group-hover:rotate-12 transition-transform">🐙</span>
-        </h4>
-        <p class="text-gray-600">Projects & Code</p>
+    <div class="skill-tags">
+
+        <span>AWS</span>
+        <span>EC2</span>
+        <span>S3</span>
+        <span>Cloud</span>
+
     </div>
-</a>
 
-
-   <!-- CodeChef -->
-<a href="https://www.codechef.com/users/rohanshinde80" target="_blank"
-   class="group bg-gray-50 p-6 rounded-2xl hover-lift
-          transition-all duration-300 ease-out
-          hover:scale-105 hover:shadow-xl
-          hover:ring-2 hover:ring-yellow-400 hover:ring-offset-2
-          relative overflow-hidden">
-
-    <span class="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-300/40 to-transparent
-                 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
-
-    <div class="relative transition-transform duration-300 group-hover:-translate-y-1">
-        <h4 class="text-xl font-semibold mb-2 text-gray-800 flex justify-center gap-2">
-            CodeChef <span class="group-hover:rotate-12 transition-transform">👨‍🍳</span>
-        </h4>
-        <p class="text-gray-600">Competitive Coding</p>
+    <div class="skill-progress">
+        <span style="width: 55%;"></span>
     </div>
-</a>
-
-  <!-- HackerRank -->
-<a href="https://www.hackerrank.com/profile/rohanshinde8008" target="_blank"
-   class="group bg-gray-50 p-6 rounded-2xl hover-lift
-          transition-all duration-300 ease-out
-          hover:scale-105 hover:shadow-xl
-          hover:ring-2 hover:ring-green-500 hover:ring-offset-2
-          relative overflow-hidden">
-
-    <span class="absolute inset-0 bg-gradient-to-r from-transparent via-green-300/40 to-transparent
-                 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
-
-    <div class="relative transition-transform duration-300 group-hover:-translate-y-1">
-        <h4 class="text-xl font-semibold mb-2 text-gray-800 flex justify-center gap-2">
-            HackerRank <span class="group-hover:rotate-12 transition-transform">🏆</span>
-        </h4>
-        <p class="text-gray-600">Problem Solving</p>
-    </div>
-</a>
-
 
 </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CURRENTLY LEARNING
+        ================================================= -->
+
+        <div class="learning-section reveal-skill">
+
+            <div class="skills-subheading learning-heading">
+
+                <span>02</span>
+
+                <h3>Currently Learning</h3>
+
+            </div>
+
+
+            <div class="learning-grid">
+
+
+                <!-- LangChain -->
+                <div class="learning-card">
+
+                    <div class="learning-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+
+                    <div>
+                        <h4>LangChain</h4>
+
+                        <p>
+                            Learning LLM application development
+                            and RAG workflows.
+                        </p>
+                    </div>
+
+                    <span class="learning-status">
+                        Learning
+                    </span>
+
+                </div>
+
+
+                <!-- LangGraph -->
+                <div class="learning-card">
+
+                    <div class="learning-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+
+                    <div>
+                        <h4>LangGraph</h4>
+
+                        <p>
+                            Exploring graph-based AI workflows
+                            and agent systems.
+                        </p>
+                    </div>
+
+                    <span class="learning-status">
+                        Learning
+                    </span>
+
+                </div>
+
+
+                <!-- Docker -->
+                <div class="learning-card">
+
+                    <div class="learning-icon">
+                        <i class="fab fa-docker"></i>
+                    </div>
+
+                    <div>
+                        <h4>Docker</h4>
+
+                        <p>
+                            Learning containerization and
+                            application deployment.
+                        </p>
+                    </div>
+
+                    <span class="learning-status">
+                        Learning
+                    </span>
+
+                </div>
+
+
+                <!-- Jenkins -->
+                <div class="learning-card">
+
+                    <div class="learning-icon">
+                        <i class="fas fa-gears"></i>
+                    </div>
+
+                    <div>
+                        <h4>Jenkins</h4>
+
+                        <p>
+                            Exploring CI/CD automation and
+                            development workflows.
+                        </p>
+                    </div>
+
+                    <span class="learning-status">
+                        Learning
+                    </span>
+
+                </div>
+
+
+                <!-- Full Stack -->
+                <div class="learning-card">
+
+                    <div class="learning-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+
+                    <div>
+                        <h4>Full Stack Development</h4>
+
+                        <p>
+                            Learning to connect frontend,
+                            backend and databases into complete
+                            applications.
+                        </p>
+                    </div>
+
+                    <span class="learning-status">
+                        Learning
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
+<!-- =====================================================
+     PROJECTS SECTION 
+===================================================== -->
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 gradient-main relative overflow-hidden">
-        <!-- Background Elements -->
-        <div class="absolute inset-0">
-            <div class="absolute top-20 left-20 w-40 h-40 bg-white/5 rounded-full floating-orb blur-2xl"></div>
-            <div class="absolute bottom-20 right-20 w-32 h-32 bg-white/10 rounded-full floating-orb blur-xl" style="animation-delay: 3s;"></div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-white/5 rounded-full floating-orb blur-3xl" style="animation-delay: 1.5s;"></div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold text-white mb-6 text-shadow">Let's Create Something Amazing</h2>
-                <div class="w-24 h-1 bg-white mx-auto rounded-full mb-6"></div>
-                <p class="text-xl text-gray-100 max-w-2xl mx-auto">Ready to bring your ideas to life? Let's collaborate and make something extraordinary together.</p>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="text-white space-y-8">
-                    <div>
-                        <h3 class="text-3xl font-bold mb-8">Get In Touch</h3>
-                        <p class="text-lg text-gray-100 mb-8">I'm always excited to work on new projects and collaborate with amazing people. Drop me a message!</p>
-                    </div>
-                    
-                    <div class="space-y-6">
-                        <a href="mailto:rohanshinde@gmail.com" class="flex items-center space-x-4 group">
-                            <div class="w-16 h-16 glass-morphism rounded-2xl flex items-center justify-center group-hover:scale-110 transition duration-300">
-                                <i class="fas fa-envelope text-2xl"></i>
-                            </div>
-                            <div>
-                                <div class="font-bold text-xl">Email</div>
-                                <div class="text-gray-200">rohanshinde8008@gmail.com</div>
-                            </div>
-                        </a>
-                        
-                        <a href="https://www.linkedin.com/in/rohan-shinde-9ba59b361" target="_blank" class="flex items-center space-x-4 group">
-                            <div class="w-16 h-16 glass-morphism rounded-2xl flex items-center justify-center group-hover:scale-110 transition duration-300">
-                                <i class="fab fa-linkedin text-2xl"></i>
-                            </div>
-                            <div>
-                                <div class="font-bold text-xl">LinkedIn</div>
-                                <div class="text-gray-200">rohan-shinde-9ba59b361</div>
-                            </div>
-                        </a>
-                        
-                        <a href="https://www.instagram.com/rohanshinde_80?igsh=MXhmcXdieXJpOXBnOQ==" target="_blank" class="flex items-center space-x-4 group">
-                            <div class="w-16 h-16 glass-morphism rounded-2xl flex items-center justify-center group-hover:scale-110 transition duration-300">
-                                <i class="fab fa-instagram text-2xl"></i>
-                            </div>
-                            <div>
-                                <div class="font-bold text-xl">Instagram</div>
-                                <div class="text-gray-200">@rohanshinde_80</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="glass-morphism rounded-3xl p-8">
-                    <form class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <input type="text" placeholder="Your Name" class="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-200 focus:outline-none focus:border-white/50 transition duration-300">
-                            <input type="email" placeholder="Your Email" class="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-200 focus:outline-none focus:border-white/50 transition duration-300">
-                        </div>
-                        <input type="text" placeholder="Subject" class="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-200 focus:outline-none focus:border-white/50 transition duration-300">
-                        <textarea rows="5" placeholder="Your Message" class="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-200 focus:outline-none focus:border-white/50 resize-none transition duration-300"></textarea>
-                        <button type="submit" class="w-full magnetic-btn bg-white text-purple-600 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition duration-300 pulse-glow">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="work" class="projects-section">
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center">
-                <div class="text-3xl font-bold gradient-text mb-4">Rohan Shinde🚀</div>
-                <p class="text-gray-400 text-lg mb-8">Creating beautiful things, one line of code at a time!</p>
-                
-                <div class="flex justify-center space-x-6 mb-8">
-                    <a href="mailto:rohanshinde8008@gmail.com" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition duration-300 hover:scale-110">
+    <!-- Background Effects -->
+    <div class="projects-glow projects-glow-1"></div>
+    <div class="projects-glow projects-glow-2"></div>
+
+    <div class="projects-container">
+
+        <!-- =================================================
+             PROJECTS HEADING
+        ================================================== -->
+
+        <div class="projects-heading reveal-project">
+
+            <span class="projects-eyebrow">
+                MY PROJECTS
+            </span>
+
+            <h2>
+                Selected
+                <span>Work.</span>
+            </h2>
+
+            <p>
+                A collection of practical applications and
+                projects I have built while developing my
+                skills in AI, backend development, databases
+                and modern web technologies.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             FEATURED PROJECT
+        ================================================== -->
+
+        <div class="featured-project tilt-project reveal-project">
+
+            <div class="featured-project-content">
+
+                <div class="project-top">
+
+                    <span class="project-number">
+                        01
+                    </span>
+
+                    <span class="project-badge">
+                        MAJOR PROJECT
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    AI-Powered HR Policy Assistant
+                </h3>
+
+
+                <p class="project-description">
+
+                    An AI-powered HR Policy Assistant that uses
+                    a RAG-based architecture to retrieve relevant
+                    HR policy information and generate accurate
+                    answers for employees.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>Python</span>
+                    <span>FastAPI</span>
+                    <span>MySQL</span>
+                    <span>SQLAlchemy</span>
+                    <span>FAISS</span>
+                    <span>Sentence Transformers</span>
+                    <span>Gemini AI</span>
+                    <span>RAG</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+
+                </div>
+
+
+                <div class="project-actions">
+
+                    <a
+                        href="#"
+                        class="project-btn primary-project-btn"
+                    >
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+
+                    <a
+                        href="#"
+                        class="project-btn secondary-project-btn"
+                    >
+                        View Project
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="featured-project-visual">
+
+                <div class="project-orbit orbit-1"></div>
+                <div class="project-orbit orbit-2"></div>
+
+                <div class="project-ai-icon">
+
+                    <i class="fas fa-brain"></i>
+
+                </div>
+
+                <span class="orbit-dot dot-1"></span>
+                <span class="orbit-dot dot-2"></span>
+                <span class="orbit-dot dot-3"></span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             OTHER PROJECTS
+        ================================================== -->
+
+        <div class="projects-grid">
+
+
+            <!-- =================================================
+                 02 - COW MANAGEMENT
+            ================================================== -->
+
+            <article class="project-card tilt-project reveal-project">
+
+                <div class="project-card-top">
+
+                    <span class="project-number">
+                        02
+                    </span>
+
+                    <div class="project-icon cow-icon">
+                        <i class="fas fa-cow"></i>
+                    </div>
+
+                </div>
+
+
+                <h3>
+                    Cow Management System
+                </h3>
+
+
+                <p>
+
+                    A database-driven application designed
+                    to manage cattle information, records
+                    and related management activities.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>Java</span>
+                    <span>JDBC</span>
+                    <span>MySQL</span>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="project-link"
+                >
+                    View Project
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+            <!-- =================================================
+                 03 - BOOKSTORE
+            ================================================== -->
+
+            <article class="project-card tilt-project reveal-project">
+
+                <div class="project-card-top">
+
+                    <span class="project-number">
+                        03
+                    </span>
+
+                    <div class="project-icon bookstore-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+
+                </div>
+
+
+                <h3>
+                    Bookstore / E-Commerce
+                </h3>
+
+
+                <p>
+
+                    A web-based bookstore application with
+                    an interactive interface for displaying
+                    and managing books.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>React</span>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="project-link"
+                >
+                    View Project
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+            <!-- =================================================
+                 04 - HANDWRITTEN DIGIT
+            ================================================== -->
+
+            <article class="project-card tilt-project reveal-project">
+
+                <div class="project-card-top">
+
+                    <span class="project-number">
+                        04
+                    </span>
+
+                    <div class="project-icon digit-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+
+                </div>
+
+
+                <h3>
+                    Handwritten Digit Recognition
+                </h3>
+
+
+                <p>
+
+                    A CNN-based handwritten digit recognition
+                    system built using Python and TensorFlow.
+                    The dataset was manually prepared and used
+                    for model training.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>Python</span>
+                    <span>TensorFlow</span>
+                    <span>CNN</span>
+                    <span>Dataset</span>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="project-link"
+                >
+                    View Project
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+            <!-- =================================================
+                 05 - SMART CALC
+            ================================================== -->
+
+            <article class="project-card tilt-project reveal-project">
+
+                <div class="project-card-top">
+
+                    <span class="project-number">
+                        05
+                    </span>
+
+                    <div class="project-icon calculator-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+
+                </div>
+
+
+                <h3>
+                    Smart Calc
+                </h3>
+
+
+                <p>
+
+                    A modern and interactive calculator built
+                    with a clean interface, dark/light theme,
+                    smooth animations and responsive design.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+
+                </div>
+
+
+                <a href="https://github.com/rohanshinde8080/smart-calc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    GitHub
+                    <i class="fab fa-github"></i>
+                </a>
+
+            </article>
+
+
+            <!-- =================================================
+                 06 - PORTFOLIO
+            ================================================== -->
+
+            <article class="project-card tilt-project reveal-project">
+
+                <div class="project-card-top">
+
+                    <span class="project-number">
+                        06
+                    </span>
+
+                    <div class="project-icon portfolio-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+
+                </div>
+
+
+                <h3>
+                    Personal Portfolio Website
+                </h3>
+
+
+                <p>
+
+                    A professional personal portfolio website
+                    showcasing my skills, projects, education
+                    and achievements with a modern interactive UI.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Tailwind CSS</span>
+
+                </div>
+
+
+                <a
+                    href="#home"
+                    class="project-link"
+                >
+                    View Portfolio
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     EDUCATION SECTION
+========================================================= -->
+
+<section id="education" class="education-section">
+
+    <div class="education-bg-glow education-glow-1"></div>
+    <div class="education-bg-glow education-glow-2"></div>
+
+    <div class="education-container">
+
+        <!-- Heading -->
+        <div class="education-heading reveal-education">
+
+            <span class="education-eyebrow">
+                MY JOURNEY
+            </span>
+
+            <h2>
+                Education <span>Journey</span>
+            </h2>
+
+            <p>
+                My academic journey in computer applications,
+                programming and technology.
+            </p>
+
+        </div>
+
+
+        <!-- Timeline -->
+        <div class="education-timeline">
+
+
+            <!-- MCA -->
+            <div class="education-item reveal-education">
+
+                <div class="education-dot">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+
+                <div class="education-card">
+
+                    <div class="education-card-top">
+
+                        <span class="education-year">
+                            2025 - Present
+                        </span>
+
+                        <span class="education-status">
+                            Currently Studying
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Master of Computer Applications
+                    </h3>
+
+                    <h4>
+                        Sanjivani University, Kopargaon
+                    </h4>
+
+                    <p>
+                        Currently pursuing MCA with a focus on
+                        Python, AI, RAG-based applications,
+                        backend development and full-stack technologies.
+                    </p>
+
+                    <div class="education-tags">
+
+                        <span>MCA</span>
+                        <span>Python</span>
+                        <span>AI</span>
+                        <span>Full Stack</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BCA -->
+            <div class="education-item reveal-education">
+
+                <div class="education-dot">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+
+                <div class="education-card">
+
+                    <div class="education-card-top">
+
+                        <span class="education-year">
+                            2022 - 2025
+                        </span>
+
+                        <span class="education-result">
+                            CGPA: 8.38
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Bachelor of Computer Applications
+                    </h3>
+
+                    <h4>
+                        Shri Saibaba Senior College, Shirdi
+                    </h4>
+
+                    <p>
+                        Completed BCA with a strong foundation
+                        in programming, databases, web development
+                        and software development.
+                    </p>
+
+                    <div class="education-tags">
+
+                        <span>BCA</span>
+                        <span>Java</span>
+                        <span>MySQL</span>
+                        <span>Web Development</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HSC -->
+            <div class="education-item reveal-education">
+
+                <div class="education-dot">
+                    <i class="fas fa-book"></i>
+                </div>
+
+                <div class="education-card">
+
+                    <div class="education-card-top">
+
+                        <span class="education-year">
+                            2020 - 2022
+                        </span>
+
+                        <span class="education-result">
+                            38%
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Higher Secondary Certificate
+                    </h3>
+
+                    <h4>
+                        Shri Saibaba Jr. College, Shirdi
+                    </h4>
+
+                    <p>
+                        Completed HSC in Science stream and
+                        developed an interest in computer
+                        applications and technology.
+                    </p>
+
+                    <div class="education-tags">
+
+                        <span>HSC</span>
+                        <span>Science</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SSC -->
+            <div class="education-item reveal-education">
+
+                <div class="education-dot">
+                    <i class="fas fa-school"></i>
+                </div>
+
+                <div class="education-card">
+
+                    <div class="education-card-top">
+
+                        <span class="education-year">
+                            2019 - 2020
+                        </span>
+
+                        <span class="education-result">
+                            80.30%
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Secondary School Certificate
+                    </h3>
+
+                    <h4>
+                        S.N.A. Deshmukh Madhyamik Vidyalaya, Rui
+                    </h4>
+
+                    <p>
+                        Completed secondary education with a
+                        strong academic foundation.
+                    </p>
+
+                    <div class="education-tags">
+
+                        <span>SSC</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     ACHIEVEMENTS SECTION
+========================================================= -->
+
+<section id="achievements" class="achievements-section">
+
+    <!-- Background -->
+    <div class="achievement-orb achievement-orb-1"></div>
+    <div class="achievement-orb achievement-orb-2"></div>
+
+    <div class="achievements-container">
+
+        <!-- =================================================
+             HEADING
+        ================================================= -->
+
+        <div class="achievements-heading">
+
+            <span class="achievements-eyebrow">
+                ACHIEVEMENT JOURNEY
+            </span>
+
+            <h2>
+                Code. <span>Compete.</span> Improve.
+            </h2>
+
+            <p>
+                A visual snapshot of my coding progress,
+                competitive programming and technical milestones.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             BIG STATS
+        ================================================= -->
+
+        <div class="achievement-stats">
+
+            <!-- LeetCode -->
+            <div class="achievement-stat">
+
+                <div class="stat-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+
+                <div class="stat-value">
+                    212
+                </div>
+
+                <div class="stat-label">
+                    LeetCode Problems
+                </div>
+
+                <div class="stat-line">
+                    <span></span>
+                </div>
+
+            </div>
+
+
+            <!-- Rating -->
+            <div class="achievement-stat">
+
+                <div class="stat-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+
+                <div class="stat-value">
+                    1,416
+                </div>
+
+                <div class="stat-label">
+                    Contest Rating
+                </div>
+
+                <div class="stat-line">
+                    <span></span>
+                </div>
+
+            </div>
+
+
+            <!-- CodeChef -->
+            <div class="achievement-stat">
+
+                <div class="stat-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+
+                <div class="stat-value">
+                    144
+                </div>
+
+                <div class="stat-label">
+                    CodeChef Problems
+                </div>
+
+                <div class="stat-line">
+                    <span></span>
+                </div>
+
+            </div>
+
+
+            <!-- Badge -->
+            <div class="achievement-stat">
+
+                <div class="stat-icon">
+                    <i class="fas fa-fire"></i>
+                </div>
+
+                <div class="stat-value">
+                    50
+                </div>
+
+                <div class="stat-label">
+                    Days Coding Badge
+                </div>
+
+                <div class="stat-line">
+                    <span></span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             ACHIEVEMENT TIMELINE
+        ================================================= -->
+
+        <div class="achievement-journey">
+
+            <div class="journey-line"></div>
+
+
+            <!-- 01 -->
+            <div class="journey-item journey-left">
+
+                <div class="journey-marker">
+                    <span>01</span>
+                </div>
+
+                <div class="journey-content">
+
+                    <span class="journey-platform">
+                        LEETCODE
+                    </span>
+
+                    <h3>
+                        212 Problems Solved
+                    </h3>
+
+                    <p>
+                        Built consistency by solving programming
+                        problems focused on data structures,
+                        algorithms and logical problem solving.
+                    </p>
+
+                    <div class="journey-tags">
+                        <span>DSA</span>
+                        <span>Algorithms</span>
+                        <span>Problem Solving</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 02 -->
+            <div class="journey-item journey-right">
+
+                <div class="journey-marker">
+                    <span>02</span>
+                </div>
+
+                <div class="journey-content">
+
+                    <span class="journey-platform">
+                        COMPETITIVE CODING
+                    </span>
+
+                    <h3>
+                        Contest Rating 1,416
+                    </h3>
+
+                    <p>
+                        Participated in LeetCode contests and
+                        achieved a current contest rating of
+                        1,416.
+                    </p>
+
+                    <div class="journey-tags">
+                        <span>LeetCode</span>
+                        <span>Contest</span>
+                        <span>DSA</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 03 -->
+            <div class="journey-item journey-left">
+
+                <div class="journey-marker">
+                    <span>03</span>
+                </div>
+
+                <div class="journey-content">
+
+                    <span class="journey-platform">
+                        CONSISTENCY
+                    </span>
+
+                    <h3>
+                        50 Days Badge
+                    </h3>
+
+                    <p>
+                        Earned the LeetCode 50 Days Badge in
+                        2026 by maintaining consistent coding
+                        practice.
+                    </p>
+
+                    <div class="journey-tags">
+                        <span>2026</span>
+                        <span>Consistency</span>
+                        <span>LeetCode</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 04 -->
+            <div class="journey-item journey-right">
+
+                <div class="journey-marker">
+                    <span>04</span>
+                </div>
+
+                <div class="journey-content">
+
+                    <span class="journey-platform">
+                        CODECHEF
+                    </span>
+
+                    <h3>
+                        144 Problems Solved
+                    </h3>
+
+                    <p>
+                        Practiced programming problems on
+                        CodeChef and strengthened problem-solving
+                        skills across multiple programming topics.
+                    </p>
+
+                    <div class="journey-tags">
+                        <span>Java</span>
+                        <span>JavaScript</span>
+                        <span>SQL</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CERTIFICATIONS
+        ================================================= -->
+
+        <div class="certification-area">
+
+            <div class="certification-heading">
+
+                <span>
+                    VERIFIED SKILLS
+                </span>
+
+                <h3>
+                    Certifications
+                </h3>
+
+            </div>
+
+
+            <div class="certification-list">
+
+                <!-- Java -->
+                <div class="certification-item">
+
+                    <div class="certification-icon">
+                        <i class="fab fa-java"></i>
+                    </div>
+
+                    <div class="certification-info">
+
+                        <strong>
+                            Java (Basic)
+                        </strong>
+
+                        <span>
+                            HackerRank • Verified
+                        </span>
+
+                    </div>
+
+                    <i class="fas fa-check-circle cert-check"></i>
+
+                </div>
+
+
+                <!-- Go -->
+                <div class="certification-item">
+
+                    <div class="certification-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+
+                    <div class="certification-info">
+
+                        <strong>
+                            Go (Basic)
+                        </strong>
+
+                        <span>
+                            HackerRank • Verified
+                        </span>
+
+                    </div>
+
+                    <i class="fas fa-check-circle cert-check"></i>
+
+                </div>
+
+
+                <!-- SQL -->
+                <div class="certification-item">
+
+                    <div class="certification-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+
+                    <div class="certification-info">
+
+                        <strong>
+                            SQL (Basic)
+                        </strong>
+
+                        <span>
+                            HackerRank • Verified
+                        </span>
+
+                    </div>
+
+                    <i class="fas fa-check-circle cert-check"></i>
+
+                </div>
+
+
+                <!-- SQL 50 -->
+                <div class="certification-item">
+
+                    <div class="certification-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+
+                    <div class="certification-info">
+
+                        <strong>
+                            SQL 50
+                        </strong>
+
+                        <span>
+                            LeetCode Badge
+                        </span>
+
+                    </div>
+
+                    <i class="fas fa-check-circle cert-check"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CODING PROFILES
+        ================================================= -->
+
+        <div class="coding-profiles">
+
+            <div class="profiles-heading">
+
+                <span>
+                    FIND ME ONLINE
+                </span>
+
+                <h3>
+                    Coding Profiles
+                </h3>
+
+            </div>
+
+
+            <div class="profile-buttons">
+
+                <a
+                    href="https://leetcode.com/u/Rohanshinde8080/"
+                    target="_blank"
+                    class="profile-button"
+                >
+
+                    <i class="fas fa-code"></i>
+
+                    <span>
+                        LeetCode
+                    </span>
+
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+
+                <a
+                    href="https://www.codechef.com/users/rohanshinde80"
+                    target="_blank"
+                    class="profile-button"
+                >
+
+                    <i class="fas fa-laptop-code"></i>
+
+                    <span>
+                        CodeChef
+                    </span>
+
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+
+                <a
+                    href="https://www.hackerrank.com/profile/rohanshinde8008"
+                    target="_blank"
+                    class="profile-button"
+                >
+
+                    <i class="fab fa-hackerrank"></i>
+
+                    <span>
+                        HackerRank
+                    </span>
+
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     CONTACT SECTION
+========================================================= -->
+
+<section id="contact" class="contact-section">
+
+    <!-- Background Glow -->
+    <div class="contact-glow contact-glow-1"></div>
+    <div class="contact-glow contact-glow-2"></div>
+
+
+    <div class="contact-container">
+
+        <!-- =================================================
+             CONTACT HEADING
+        ================================================= -->
+
+        <div class="contact-heading">
+
+            <span class="contact-eyebrow">
+                GET IN TOUCH
+            </span>
+
+            <h2>
+                Let's Build Something
+                <span>Great.</span>
+            </h2>
+
+            <p>
+                Have a project idea, opportunity or just want
+                to connect? Feel free to reach out.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             CONTACT WRAPPER
+        ================================================= -->
+
+        <div class="contact-wrapper">
+
+
+            <!-- =================================================
+                 LEFT SIDE
+            ================================================= -->
+
+            <div class="contact-info">
+
+                <span class="contact-small-title">
+                    LET'S CONNECT
+                </span>
+
+
+                <h3>
+                    Have an idea?
+                    <br>
+                    <span>Let's talk.</span>
+                </h3>
+
+
+                <p>
+                    I'm always open to discussing new projects,
+                    development opportunities, creative ideas
+                    and interesting collaborations.
+                </p>
+
+
+                <!-- =================================================
+                     EMAIL
+                ================================================= -->
+
+                <a
+                    href="mailto:rohanshinde8008@gmail.com"
+                    class="contact-item"
+                >
+
+                    <div class="contact-item-icon">
                         <i class="fas fa-envelope"></i>
+                    </div>
+
+                    <div class="contact-item-content">
+
+                        <span>
+                            EMAIL
+                        </span>
+
+                        <strong>
+                            rohanshinde8008@gmail.com
+                        </strong>
+
+                    </div>
+
+                    <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
+
+                </a>
+
+
+                <!-- =================================================
+                     PHONE
+                ================================================= -->
+
+                <a
+                    href="tel:+918080329064"
+                    class="contact-item"
+                >
+
+                    <div class="contact-item-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+
+                    <div class="contact-item-content">
+
+                        <span>
+                            PHONE
+                        </span>
+
+                        <strong>
+                            +91 80803 29064
+                        </strong>
+
+                    </div>
+
+                    <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
+
+                </a>
+
+
+                <!-- =================================================
+                     LOCATION
+                ================================================= -->
+
+                <div class="contact-item">
+
+                    <div class="contact-item-icon">
+                        <i class="fas fa-location-dot"></i>
+                    </div>
+
+                    <div class="contact-item-content">
+
+                        <span>
+                            LOCATION
+                        </span>
+
+                        <strong>
+                            Maharashtra, India
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     SOCIAL LINKS
+                ================================================= -->
+
+                <div class="contact-socials">
+
+                    <!-- GitHub -->
+                    <a
+                        href="https://github.com/rohanshinde8080"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                    >
+                        <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/rohan-shinde-9ba59b361" target="_blank" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition duration-300 hover:scale-110">
-                        <i class="fab fa-linkedin"></i>
+
+
+                    <!-- LinkedIn -->
+                    <a
+                        href="https://www.linkedin.com/in/rohan-shinde-9ba59b361"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                    >
+                        <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://www.instagram.com/rohanshinde_80?igsh=MXhmcXdieXJpOXBnOQ=="target="_blank" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition duration-300 hover:scale-110">
+
+
+                    <!-- Instagram -->
+                    <a
+                        href="https://www.instagram.com/rohanshinde_80?igsi=MXhmcXdieXJpOXBnOQ=="
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
                         <i class="fab fa-instagram"></i>
                     </a>
+
                 </div>
-                
-                <div class="border-t border-gray-800 pt-8">
-                    <p class="text-gray-500">© 2025 Rohan Shinde | Built with ❤️ & Code
-</p>
-                </div>
+
             </div>
+
+
+            <!-- =================================================
+                 RIGHT SIDE - CONTACT FORM
+            ================================================= -->
+
+            <div class="contact-form-box">
+
+                <!-- Form Header -->
+                <div class="form-top">
+
+                    <span>
+                        SEND A MESSAGE
+                    </span>
+
+                    <div class="form-status">
+
+                        <i class="fas fa-circle"></i>
+
+                        AVAILABLE
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     CONTACT FORM
+                ================================================= -->
+
+                <form
+                    id="contact-form"
+                    class="contact-form"
+                >
+
+                    <!-- Name -->
+                    <div class="form-group">
+
+                        <label for="contact-name">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="contact-name"
+                            name="name"
+                            placeholder="Enter your name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="form-group">
+
+                        <label for="contact-email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="contact-email"
+                            name="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Subject -->
+                    <div class="form-group">
+
+                        <label for="contact-subject">
+                            Subject
+                        </label>
+
+                        <input
+                            type="text"
+                            id="contact-subject"
+                            name="subject"
+                            placeholder="What would you like to discuss?"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Message -->
+                    <div class="form-group">
+
+                        <label for="contact-message">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="contact-message"
+                            name="message"
+                            rows="5"
+                            placeholder="Write your message..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- Submit Button -->
+                    <button
+                        type="submit"
+                        class="contact-submit"
+                    >
+
+                        <span>
+                            Send Message
+                        </span>
+
+                        <i class="fas fa-paper-plane"></i>
+
+                    </button>
+
+                </form>
+
+            </div>
+
         </div>
-    </footer>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer-section">
+
+    <div class="footer-container">
+
+        <!-- Top -->
+        <div class="footer-top">
+
+            <div class="footer-brand">
+
+                <a href="#home" class="footer-logo">
+                    Rohan<span>.</span>
+                </a>
+
+                <p>
+                    MCA Student & Developer passionate about
+                    Java, AI, Web Development and Cloud Technologies.
+                </p>
+
+            </div>
+
+
+            <!-- Navigation -->
+
+            <div class="footer-navigation">
+
+                <span class="footer-title">
+                    NAVIGATION
+                </span>
+
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#work">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+
+
+            <!-- Social -->
+
+            <div class="footer-social">
+
+                <span class="footer-title">
+                    CONNECT
+                </span>
+
+                <div class="footer-social-links">
+
+                    <a
+                        href="https://github.com/rohanshinde8080"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                    >
+                        <i class="fab fa-github"></i>
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/rohan-shinde-9ba59b361"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                    >
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/rohanshinde_80?igsi=MXhmcXdieXJpOXBnOQ=="
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="mailto:rohanshinde8008@gmail.com"
+                        aria-label="Email"
+                    >
+                        <i class="fas fa-envelope"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Divider -->
+
+        <div class="footer-divider"></div>
+
+
+        <!-- Bottom -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Rohan Shinde. All Rights Reserved.
+            </p>
+
+            <p>
+                Built with
+                <span class="footer-heart">♥</span>
+                using HTML, CSS & JavaScript.
+            </p>
+
+            <a
+                href="#home"
+                class="back-to-top"
+                aria-label="Back to top"
+            >
+                <i class="fas fa-arrow-up"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
 
-        // Typing animation
-        const typingText = document.getElementById('typing-text');
-const texts = [
-  'Full Stack Web Developer',
-   'Java Developer',
-  'Backend Enthusiast',
-];
+        /* =====================================================
+           MOBILE MENU
+        ===================================================== */
+
+        const mobileMenuBtn =
+            document.getElementById("mobile-menu-btn");
+
+        const mobileMenu =
+            document.getElementById("mobile-menu");
+
+
+        if (mobileMenuBtn) {
+
+            mobileMenuBtn.addEventListener(
+                "click",
+                () => {
+
+                    mobileMenu.classList.toggle("open");
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           TYPING ANIMATION
+        ===================================================== */
+
+        const typingText =
+            document.getElementById("typing-text");
+
+
+        const texts = [
+
+            "Python Developer",
+
+            "RAG Developer",
+
+            "AI Developer",
+
+            "Backend Developer",
+
+            "Full Stack Developer",
+
+            "Problem Solver"
+
+        ];
+
 
         let textIndex = 0;
+
         let charIndex = 0;
+
         let isDeleting = false;
 
+
+
         function typeWriter() {
-            const currentText = texts[textIndex];
-            
-            if (isDeleting) {
-                typingText.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingText.textContent = currentText.substring(0, charIndex + 1);
+
+
+            const currentText =
+                texts[textIndex];
+
+
+            if (!isDeleting) {
+
+                typingText.textContent =
+                    currentText.substring(
+                        0,
+                        charIndex + 1
+                    );
+
                 charIndex++;
+
+
+            } else {
+
+                typingText.textContent =
+                    currentText.substring(
+                        0,
+                        charIndex - 1
+                    );
+
+                charIndex--;
+
             }
 
-            if (!isDeleting && charIndex === currentText.length) {
-                setTimeout(() => isDeleting = true, 2000);
-            } else if (isDeleting && charIndex === 0) {
+
+
+            if (
+                !isDeleting &&
+                charIndex === currentText.length
+            ) {
+
+                setTimeout(() => {
+
+                    isDeleting = true;
+
+                }, 1800);
+
+
+            }
+
+
+            else if (
+                isDeleting &&
+                charIndex === 0
+            ) {
+
                 isDeleting = false;
-                textIndex = (textIndex + 1) % texts.length;
+
+                textIndex =
+                    (textIndex + 1) % texts.length;
+
             }
 
-            setTimeout(typeWriter, isDeleting ? 50 : 100);
+
+
+            setTimeout(
+                typeWriter,
+                isDeleting ? 50 : 90
+            );
+
         }
+
 
         typeWriter();
 
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-                mobileMenu.classList.add('hidden');
+
+
+        /* =====================================================
+           SMOOTH SCROLL
+        ====================================================== */
+
+        document
+            .querySelectorAll('a[href^="#"]')
+            .forEach(anchor => {
+
+
+                anchor.addEventListener(
+                    "click",
+                    function (e) {
+
+                        const targetId =
+                            this.getAttribute("href");
+
+
+                        if (
+                            targetId === "#" ||
+                            !targetId
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        const target =
+                            document.querySelector(
+                                targetId
+                            );
+
+
+                        if (target) {
+
+                            e.preventDefault();
+
+
+                            target.scrollIntoView({
+
+                                behavior: "smooth",
+
+                                block: "start"
+
+                            });
+
+
+                            if (mobileMenu) {
+
+                                mobileMenu.classList.remove(
+                                    "open"
+                                );
+
+                            }
+
+                        }
+
+                    }
+                );
+
             });
-        });
 
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message...!! This is a demo form. In a real website, this would send your message.');
-        });
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+        /* =====================================================
+           NAVBAR ACTIVE LINK
+        ====================================================== */
+
+        const sections =
+            document.querySelectorAll(
+                "section[id]"
+            );
+
+
+        const navLinks =
+            document.querySelectorAll(
+                ".nav-link"
+            );
+
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+
+                let current = "";
+
+
+                sections.forEach(section => {
+
+
+                    const sectionTop =
+                        section.offsetTop - 150;
+
+
+                    const sectionHeight =
+                        section.offsetHeight;
+
+
+                    if (
+                        window.scrollY >= sectionTop &&
+                        window.scrollY <
+                        sectionTop + sectionHeight
+                    ) {
+
+                        current =
+                            section.getAttribute("id");
+
+                    }
+
+                });
+
+
+                navLinks.forEach(link => {
+
+                    link.classList.remove(
+                        "active"
+                    );
+
+
+                    if (
+                        link.getAttribute("href") ===
+                        "#" + current
+                    ) {
+
+                        link.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                });
+
+            }
+        );
+
+
+
+        /* =====================================================
+           ABOUT PHOTO 3D TILT
+        ====================================================== */
+
+        const photoCard =
+            document.querySelector(
+                ".about-photo-card"
+            );
+
+
+        if (photoCard) {
+
+
+            photoCard.addEventListener(
+                "mousemove",
+                (e) => {
+
+
+                    const rect =
+                        photoCard.getBoundingClientRect();
+
+
+                    const x =
+                        e.clientX - rect.left;
+
+
+                    const y =
+                        e.clientY - rect.top;
+
+
+                    const centerX =
+                        rect.width / 2;
+
+
+                    const centerY =
+                        rect.height / 2;
+
+
+                    const rotateY =
+                        ((x - centerX) /
+                            centerX) * 8;
+
+
+                    const rotateX =
+                        ((centerY - y) /
+                            centerY) * 8;
+
+
+                    photoCard.style.transform =
+                        `
+                        perspective(1000px)
+                        rotateX(${rotateX}deg)
+                        rotateY(${rotateY}deg)
+                        translateY(-8px)
+                        scale(1.02)
+                        `;
+
                 }
-            });
-        }, observerOptions);
+            );
 
-        // Observe elements for scroll animations
-        document.querySelectorAll('.slide-up, .hover-lift').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
 
-        // Skill circle animation
-        const skillObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const circles = entry.target.querySelectorAll('.skill-circle');
-                    circles.forEach(circle => {
-                        circle.style.animation = 'fillCircle 2s ease-in-out forwards';
-                    });
+            photoCard.addEventListener(
+                "mouseleave",
+                () => {
+
+                    photoCard.style.transform =
+                        `
+                        perspective(1000px)
+                        rotateX(0deg)
+                        rotateY(0deg)
+                        translateY(0)
+                        scale(1)
+                        `;
+
                 }
-            });
-        }, { threshold: 0.5 });
+            );
 
-        const skillsSection = document.getElementById('skills');
-        if (skillsSection) {
-            skillObserver.observe(skillsSection);
         }
 
-        // Parallax effect
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.floating-orb');
-            
-            parallaxElements.forEach((element, index) => {
-                const speed = 0.5 + (index * 0.1);
-                element.style.transform = `translateY(${scrolled * speed * 0.1}px) rotate(${scrolled * 0.05}deg)`;
-            });
-        });
 
-        // Magnetic button effect
-        document.querySelectorAll('.magnetic-btn').forEach(btn => {
-            btn.addEventListener('mouseenter', function(e) {
-                this.style.transform = 'scale(1.05)';
-            });
-            
-            btn.addEventListener('mouseleave', function(e) {
-                this.style.transform = 'scale(1)';
-            });
-        });
+
+        /* =====================================================
+           REVEAL ABOUT SECTION
+        ====================================================== */
+
+        const aboutItems =
+            document.querySelectorAll(
+                ".about-content > *, .about-visual"
+            );
+
+
+        const revealObserver =
+            new IntersectionObserver(
+                (entries) => {
+
+
+                    entries.forEach(entry => {
+
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "about-visible"
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+
+        aboutItems.forEach(
+            item => {
+
+                revealObserver.observe(
+                    item
+                );
+
+            }
+        );
+
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9620cc05b74b3206',t:'MTc1Mjk5NzA4NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+
+
+    <!-- Three.js Hero Animation -->
+
+    <script src="js/three-hero.js"></script>
+
+
+    <!-- Portfolio Enhancements -->
+
+    <script src="js/portfolio-enhancements.js"></script>
+
+
+</body>
+
 </html>
